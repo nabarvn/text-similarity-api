@@ -9,3 +9,7 @@
 .three-d {
   text-shadow: none;
 }
+
+.dark .simplebar-scrollbar::before {
+  background-color: whitesmoke;
+}
