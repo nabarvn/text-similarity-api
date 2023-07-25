@@ -1,7 +1,7 @@
+import { SignInButton, SignOutButton, ThemeToggle } from "@/components";
+import { buttonVariants } from "@/ui/Button";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { buttonVariants } from "@/ui/Button";
-import { SignInButton, SignOutButton, ThemeToggle } from "@/components";
 
 const Navbar = async () => {
   const session = await getServerSession();
