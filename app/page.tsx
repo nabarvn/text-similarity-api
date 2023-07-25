@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className='relative h-screen flex items-center justify-center overflow-x-hidden'>
+    <div className='relative h-screen flex items-center justify-center overflow-hidden'>
       <div className='container max-w-7xl mx-auto w-full h-full pt-32 lg:pt-20'>
         <div className='relative flex flex-col justify-start lg:justify-center items-center lg:items-start h-full gap-6'>
           <Heading
@@ -35,12 +35,13 @@ export default function Home() {
           <div className='relative w-full max-w-lg lg:max-w-md xl:max-w-xl 2xl:max-w-2xl lg:right-2 aspect-square lg:absolute'>
             <Image
               priority
-              className='img-shadow'
-              quality={100}
-              style={{ objectFit: "contain" }}
               fill
               src='/typewriter.png'
               alt='Typewriter'
+              quality={100}
+              style={{ objectFit: "contain" }}
+              sizes='50vw'
+              className='img-shadow'
             />
           </div>
         </div>
