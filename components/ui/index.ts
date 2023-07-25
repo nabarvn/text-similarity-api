@@ -4,3 +4,4 @@ export { default as Button } from "./Button";
 export { DropdownMenu } from "./DropdownMenu";
 export { Toast } from "./Toast";
 export { Tabs } from "./Tabs";
+export { Input } from "./Input";
