@@ -1,8 +1,7 @@
-import { CreateApiData } from "@/types/api/key";
+import axios from "axios";
 
 export async function createApiKey() {
-  const res = await fetch("/api/api-key/create");
-  const data = (await res.json()) as CreateApiData;
+  const { data } = await axios.get("/api/api-key/create");
 
   if (data.error || !data.createdApiKey) {
     if (data.error instanceof Array) {
@@ -12,5 +11,5 @@ export async function createApiKey() {
     throw new Error(data.error ?? "Something went wrong.");
   }
 
-  return data.createdApiKey.key;
+  return data.createdApiKey.key as string;
 }
