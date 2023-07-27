@@ -1,6 +1,7 @@
 import { Session } from "next-auth";
 import { notFound } from "next/navigation";
 import { Heading, Input, Paragraph, Table } from "@/components/ui";
+import { ApiKeyOptions } from "@/components";
 
 type ApiKey = {
   id: string;
@@ -43,8 +44,13 @@ const ApiDashboard = ({
 
       <div className='flex flex-col lg:flex-row gap-4 justify-center lg:justify-start items-center'>
         <Paragraph>Your API key:</Paragraph>
+
         <Input className='w-fit truncate' readOnly value={activeApiKey.key} />
-        {/* TODO: add options to create new / revoke */}
+
+        <ApiKeyOptions
+          apiKeyId={activeApiKey.id}
+          apiKeyValue={activeApiKey.key}
+        />
       </div>
 
       <Paragraph className='text-center lg:text-left w-fit lg:w-full mx-auto lg:mx-0 mt-4 -mb-4'>
