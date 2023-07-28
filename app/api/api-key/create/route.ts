@@ -1,12 +1,11 @@
-import { authOptions } from "@/lib/auth";
+import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { nanoid } from "nanoid";
-import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 export async function GET(req: Request) {
   try {
-    const user = await getServerSession(authOptions).then((res) => res?.user);
+    const user = await getAuthSession().then((res) => res?.user);
 
     if (!user) {
       return new Response("Unauthorized to perform this action.", {
