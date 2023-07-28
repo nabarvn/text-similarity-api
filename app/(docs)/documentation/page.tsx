@@ -14,7 +14,7 @@ const Documentation = () => {
       <div className='flex flex-col items-center gap-6'>
         <Heading>Making a Request</Heading>
 
-        <Paragraph>api/v1/similarity</Paragraph>
+        <Paragraph>api/v1/text-similarity</Paragraph>
 
         <DocumentationTabs />
       </div>
