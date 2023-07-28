@@ -10,3 +10,4 @@ export { default as RequestApiKey } from "./RequestApiKey";
 export { default as ApiDashboard } from "./ApiDashboard";
 export { default as CopyButton } from "./CopyButton";
 export { default as ApiKeyOptions } from "./ApiKeyOptions";
+export { default as UserAuthForm } from "./UserAuthForm";
