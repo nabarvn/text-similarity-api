@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className='relative h-screen flex items-center justify-center overflow-hidden'>
-      <div className='container max-w-7xl mx-auto w-full h-full pt-32 lg:pt-20'>
+    <div className='relative min-h-screen lg:h-screen flex items-center justify-center'>
+      <div className='container max-w-7xl mx-auto w-full h-full'>
         <div className='relative flex flex-col justify-start lg:justify-center items-center lg:items-start h-full gap-6'>
           <Heading
             size='lg'

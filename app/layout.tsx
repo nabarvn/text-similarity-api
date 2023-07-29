@@ -20,12 +20,17 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
+      <body
+        className='min-h-screen bg-slate-50 dark:bg-slate-900 overflow-hidden antialiased pt-20'
+        style={{ height: "100svh" }}
+      >
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Navbar />
 
-          {children}
+          <section className='overflow-y-auto md:overflow-hidden h-full lg:scrollbar-thin lg:scrollbar-thumb-slate-300 lg:dark:scrollbar-thumb-slate-500 lg:scrollbar-thumb-rounded-sm'>
+            {children}
+          </section>
 
           <Toaster position='bottom-right' />
         </Providers>
