@@ -2,6 +2,12 @@ import { buttonVariants } from "@/components/ui/Button";
 import { Heading, Paragraph } from "@/components/ui";
 import { UserAuthForm, Icons } from "@/components";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Text Similarity API | Login",
+  description: "Free and Open-Source Text Similarity API",
+};
 
 const LoginPage = () => {
   return (
