@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <section className='overflow-y-auto h-full md:overflow-hidden lg:scrollbar-thin lg:scrollbar-thumb-slate-300 lg:dark:scrollbar-thumb-slate-500 lg:scrollbar-thumb-rounded-sm'>
-      <div className='relative min-h-screen lg:h-screen flex items-center justify-center mb-12'>
+      <div className='flex items-center justify-center min-h-screen lg:h-screen mb-12'>
         <div className='container max-w-7xl mx-auto w-full h-full'>
-          <div className='relative flex flex-col justify-start lg:justify-center items-center lg:items-start h-full gap-6'>
+          <div className='relative flex flex-col justify-start lg:justify-center items-center lg:items-start h-full gap-6 -mt-14'>
             <Heading
               size='lg'
               className='three-d text-black dark:text-light-gold lg:ml-2'
@@ -33,7 +33,7 @@ export default function Home() {
               .
             </Paragraph>
 
-            <div className='relative w-full max-w-lg lg:max-w-md xl:max-w-xl 2xl:max-w-2xl lg:right-2 aspect-square lg:absolute'>
+            <div className='relative w-full max-w-lg lg:max-w-md xl:max-w-xl 2xl:max-w-2xl lg:absolute lg:right-2 aspect-square'>
               <Image
                 priority
                 fill
