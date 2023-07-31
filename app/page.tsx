@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <section className='overflow-y-auto h-full md:overflow-hidden lg:scrollbar-thin lg:scrollbar-thumb-slate-300 lg:dark:scrollbar-thumb-slate-500 lg:scrollbar-thumb-rounded-sm'>
+    <section className='overflow-y-auto h-full md:overflow-hidden scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-500 scrollbar-thumb-rounded-sm'>
       <div className='relative min-h-screen lg:h-screen flex items-center justify-center mb-12'>
         <div className='container max-w-7xl mx-auto w-full h-full'>
           <div className='relative flex flex-col justify-start lg:justify-center items-center lg:items-start h-full gap-6'>
