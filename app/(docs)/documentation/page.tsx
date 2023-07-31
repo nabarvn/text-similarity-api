@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const Documentation = () => {
   return (
-    <div className='container max-w-7xl mx-auto my-12'>
-      <div className='flex flex-col items-center gap-6'>
+    <div className='container max-w-7xl mx-auto mt-12'>
+      <div className='flex flex-col items-center gap-6 mb-12'>
         <Heading>Making a Request</Heading>
 
         <Paragraph>api/v1/text-similarity</Paragraph>
