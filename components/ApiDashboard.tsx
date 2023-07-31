@@ -39,7 +39,7 @@ const ApiDashboard = ({
   if (!activeApiKey) return notFound();
 
   return (
-    <div className='container flex flex-col gap-6 mb-16'>
+    <div className='container flex flex-col gap-6 my-16'>
       <Heading>Welcome back, {session.user.name}</Heading>
 
       <div className='flex flex-col lg:flex-row gap-4 justify-center lg:justify-start items-center'>

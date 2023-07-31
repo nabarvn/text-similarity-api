@@ -8,7 +8,7 @@ import SimpleBar from "simplebar-react";
 
 const DocumentationTabs = () => {
   return (
-    <Tabs defaultValue='nodejs' className='max-w-2xl w-full mb-12'>
+    <Tabs defaultValue='nodejs' className='max-w-2xl w-full'>
       <TabsList>
         <TabsTrigger value='nodejs'>NodeJS</TabsTrigger>
         <TabsTrigger value='python'>Python</TabsTrigger>
