@@ -54,7 +54,10 @@ const Code = ({
             className +
             "transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar"
           }
-          style={{ maxHeight: show ? lines * 24 : 0, opacity: show ? 1 : 0 }}
+          style={{
+            maxHeight: show ? lines * 24 : 0,
+            opacity: show ? 1 : 0,
+          }}
         >
           {tokens.map((line, i) => {
             const { key, ...rest } = getLineProps({ line, key: i });

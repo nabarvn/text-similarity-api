@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   description: "Free and Open-Source Text Similarity API",
 };
 
-const Documentation = () => {
+const DocumentationPage = () => {
   return (
     <div className='container max-w-7xl mx-auto'>
-      <div className='flex flex-col items-center gap-6 my-12'>
+      <div className='flex flex-col items-center gap-6'>
         <Heading>Making a Request</Heading>
 
         <Paragraph>api/v1/text-similarity</Paragraph>
@@ -22,4 +22,4 @@ const Documentation = () => {
   );
 };
 
-export default Documentation;
+export default DocumentationPage;
