@@ -46,7 +46,7 @@ npm run dev
 - **Caching Layer**: [Upstash](https://docs.upstash.com/redis)
 - **Embedding Provider**: [OpenAI](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
 - **Database**: [PlanetScale](https://planetscale.com/docs/concepts/what-is-planetscale)
-- **Authentication**: [NextAuth](https://next-auth.js.org/getting-started/introduction)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/getting-started/introduction)
 - **Deployment**: [Vercel](https://vercel.com)
 
 
