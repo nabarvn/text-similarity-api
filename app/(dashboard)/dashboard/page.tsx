@@ -43,7 +43,7 @@ const DashboardPage = async () => {
   }));
 
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto mb-12'>
       {apiKey ? (
         <ApiDashboard
           session={session}

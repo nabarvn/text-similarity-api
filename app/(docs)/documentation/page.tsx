@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const DocumentationPage = () => {
   return (
-    <div className='container max-w-7xl mx-auto'>
+    <div className='container max-w-7xl mx-auto mb-12'>
       <div className='flex flex-col items-center gap-6'>
         <Heading>Making a Request</Heading>
 
