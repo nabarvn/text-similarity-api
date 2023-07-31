@@ -28,9 +28,7 @@ export default function RootLayout({
           {/* @ts-expect-error Server Component */}
           <Navbar />
 
-          <section className='overflow-y-auto md:overflow-hidden h-full lg:scrollbar-thin lg:scrollbar-thumb-slate-300 lg:dark:scrollbar-thumb-slate-500 lg:scrollbar-thumb-rounded-sm'>
-            {children}
-          </section>
+          {children}
 
           <Toaster position='bottom-right' />
         </Providers>
