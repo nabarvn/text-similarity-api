@@ -25,6 +25,8 @@ const Navbar = async () => {
           >
             <Icons.FileCode2 />
           </Link>
+
+          {session ? <SignOutButton /> : <SignInButton />}
         </div>
 
         <div className='hidden md:flex gap-4'>
