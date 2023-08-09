@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui";
 import { signOut } from "next-auth/react";
 import { toast } from "@/ui/Toast";
+import { LogOut } from "lucide-react";
 
 const SignOutButton = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -23,9 +24,19 @@ const SignOutButton = () => {
   };
 
   return (
-    <Button onClick={signUserOut} isLoading={isLoading}>
-      Sign out
-    </Button>
+    <>
+      <div className='hidden md:block'>
+        <Button onClick={signUserOut} isLoading={isLoading}>
+          Sign out
+        </Button>
+      </div>
+
+      <div className='block md:hidden'>
+        <Button onClick={signUserOut} size='sm' variant='ghost'>
+          <LogOut />
+        </Button>
+      </div>
+    </>
   );
 };
 
