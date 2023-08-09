@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui";
 import { signIn } from "next-auth/react";
 import { toast } from "@/ui/Toast";
+import { LogIn } from "lucide-react";
 
 const SignInButton = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -23,9 +24,19 @@ const SignInButton = () => {
   };
 
   return (
-    <Button onClick={signInWithGoogle} isLoading={isLoading}>
-      Sign in
-    </Button>
+    <>
+      <div className='hidden md:block'>
+        <Button onClick={signInWithGoogle} isLoading={isLoading}>
+          Sign in
+        </Button>
+      </div>
+
+      <div className='block md:hidden'>
+        <Button onClick={signInWithGoogle} size='sm' variant='ghost'>
+          <LogIn />
+        </Button>
+      </div>
+    </>
   );
 };
 
