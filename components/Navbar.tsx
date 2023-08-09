@@ -1,7 +1,7 @@
-import { SignInButton, SignOutButton, ThemeToggle } from "@/components";
+import Link from "next/link";
+import { Icons, SignInButton, SignOutButton, ThemeToggle } from "@/components";
 import { buttonVariants } from "@/ui/Button";
 import { getServerSession } from "next-auth";
-import Link from "next/link";
 
 const Navbar = async () => {
   const session = await getServerSession();
@@ -13,8 +13,18 @@ const Navbar = async () => {
           Text Similarity 1.0
         </Link>
 
-        <div className='md:hidden'>
+        <div className='flex md:hidden gap-2'>
           <ThemeToggle />
+
+          <Link
+            href={"/documentation"}
+            className={buttonVariants({
+              size: "sm",
+              variant: "ghost",
+            })}
+          >
+            <Icons.FileCode2 />
+          </Link>
         </div>
 
         <div className='hidden md:flex gap-4'>
