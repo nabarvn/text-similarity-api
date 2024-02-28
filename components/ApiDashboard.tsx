@@ -39,13 +39,13 @@ const ApiDashboard = ({
   if (!activeApiKey) return notFound();
 
   return (
-    <div className='container flex flex-col gap-6'>
-      <Heading>{`Welcome back, ${session.user.name}.`}</Heading>
+    <div className="container flex flex-col gap-6">
+      <Heading>{`Welcome back, ${session.user.name?.split(" ")[0]}.`}</Heading>
 
-      <div className='flex flex-col lg:flex-row gap-4 justify-center lg:justify-start items-center'>
+      <div className="flex flex-col lg:flex-row gap-4 justify-center lg:justify-start items-center">
         <Paragraph>Your API key:</Paragraph>
 
-        <Input className='w-fit truncate' readOnly value={activeApiKey.key} />
+        <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
 
         <ApiKeyOptions
           apiKeyId={activeApiKey.id}
@@ -53,7 +53,7 @@ const ApiDashboard = ({
         />
       </div>
 
-      <Paragraph className='text-center lg:text-left w-fit lg:w-full mx-auto lg:mx-0 mt-4 -mb-4'>
+      <Paragraph className="text-center lg:text-left w-fit lg:w-full mx-auto lg:mx-0 mt-4 -mb-4">
         Your API history:
       </Paragraph>
 
