@@ -2,8 +2,6 @@
 
 A powerful tool designed for developers to calculate the similarity between two text strings. This API leverages cosine similarity algorithm as a metric to provide accurate and efficient text comparison results.
 
-
-
 ## Screenshot
 
 <img src="./screenshot.png">
@@ -12,29 +10,28 @@ A powerful tool designed for developers to calculate the similarity between two 
   <a href="https://text-similarity-api.nabarun.app"><strong>View Project »</strong></a>
 </p>
 
-
-
 ## Running Locally
 
 This application requires Node.js v16.13+.
 
 ### Cloning the repository to the local machine:
+
 ```bash
 git clone https://github.com/nabarvn/text-similarity-api.git
 cd text-similarity-api
 ```
 
 ### Installing the dependencies:
+
 ```bash
 npm install
 ```
 
 ### Running the application:
+
 ```bash
 npm run dev
 ```
-
-
 
 ## Tech Stack:
 
@@ -45,11 +42,9 @@ npm run dev
 - **ORM Toolkit**: [Prisma](https://www.prisma.io/docs/concepts/overview/what-is-prisma)
 - **Caching Layer**: [Upstash](https://docs.upstash.com/redis)
 - **Embedding Provider**: [OpenAI](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
-- **Database**: [PlanetScale](https://planetscale.com/docs/concepts/what-is-planetscale)
+- **MySQL Database**: [Aiven](https://aiven.io/docs/get-started)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/getting-started/introduction)
 - **Deployment**: [Vercel](https://vercel.com)
-
-
 
 ## Credits
 
