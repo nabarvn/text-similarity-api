@@ -16,7 +16,9 @@ export default withAuth(
         const { success } = await rateLimiter.limit(ip);
 
         if (!success) {
-          return new NextResponse("Too many requests");
+          return new NextResponse("Too many requests", {
+            status: 429,
+          });
         }
 
         return NextResponse.next();
