@@ -4,10 +4,12 @@ import { FormEvent, useState } from "react";
 import { toast } from "@/ui/Toast";
 import { createApiKey } from "@/helpers/create-api-key";
 import { Key } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Button, Heading, Input, Paragraph } from "@/components/ui";
 import { CopyButton } from "@/components";
 
 const RequestApiKey = () => {
+  const router = useRouter();
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [apiKey, setApiKey] = useState<string | null>(null);
 
@@ -20,6 +22,7 @@ const RequestApiKey = () => {
     try {
       const generatedApiKey = await createApiKey();
       setApiKey(generatedApiKey);
+      router.refresh();
     } catch (error) {
       if (error instanceof Error) {
         toast({
@@ -42,9 +45,9 @@ const RequestApiKey = () => {
   };
 
   return (
-    <div className='container md:max-w-2xl'>
-      <div className='flex flex-col gap-6 items-center'>
-        <Key className='mx-auto h-12 w-12 text-gray-400' />
+    <div className="container md:max-w-2xl">
+      <div className="flex flex-col gap-6 items-center">
+        <Key className="mx-auto h-12 w-12 text-gray-400" />
 
         <Heading>Request your API key</Heading>
 
@@ -53,27 +56,27 @@ const RequestApiKey = () => {
 
       <form
         onSubmit={createNewApiKey}
-        className='sm:flex sm:items-center mt-6'
-        action='#'
+        className="sm:flex sm:items-center mt-6"
+        action="#"
       >
-        <div className='relative rounded-md shadow-md sm:min-w-0 sm:flex-1'>
+        <div className="relative rounded-md shadow-md sm:min-w-0 sm:flex-1">
           {apiKey && (
             <CopyButton
-              type='button'
+              type="button"
               valueToCopy={apiKey}
-              className='absolute inset-y-0 right-0 animate-in fade-in duration-300'
+              className="absolute inset-y-0 right-0 animate-in fade-in duration-300"
             />
           )}
 
           <Input
             readOnly
             value={apiKey ?? ""}
-            placeholder='Request an API key to display it here...'
+            placeholder="Request an API key to display it here..."
           />
         </div>
 
-        <div className='sm:flex-shrink-0 sm:mt-0 sm:ml-4 flex justify-center mt-3'>
-          <Button disabled={!!apiKey} isLoading={isCreating}>
+        <div className="sm:flex-shrink-0 sm:mt-0 sm:ml-4 flex justify-center mt-3">
+          <Button disabled={!!apiKey || isCreating} isLoading={isCreating}>
             Request key
           </Button>
         </div>
