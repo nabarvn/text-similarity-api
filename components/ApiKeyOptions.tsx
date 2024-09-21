@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/ui/DropdownMenu";
 
+import { AxiosError } from "axios";
 import { createApiKey } from "@/helpers/create-api-key";
 import { useRouter } from "next/navigation";
 import { revokeApiKey } from "@/helpers/revoke-api-key";
@@ -20,10 +21,10 @@ interface ApiKeyOptionsProps {
   apiKeyValue: string;
 }
 
-const ApiKeyOptions = ({ apiKeyId, apiKeyValue }: ApiKeyOptionsProps) => {
+const ApiKeyOptions = ({ apiKeyValue }: ApiKeyOptionsProps) => {
+  const router = useRouter();
   const [isCreatingNewKey, setIsCreatingNewKey] = useState<boolean>(false);
   const [isRevokingKey, setIsRevokingKey] = useState<boolean>(false);
-  const router = useRouter();
 
   const createNewApiKey = async () => {
     setIsCreatingNewKey(true);
@@ -33,6 +34,16 @@ const ApiKeyOptions = ({ apiKeyId, apiKeyValue }: ApiKeyOptionsProps) => {
       await createApiKey();
       router.refresh();
     } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response?.status === 429) {
+          return toast({
+            title: error.response.data,
+            message: "Slow down! Wait an hour before trying again.",
+            type: "error",
+          });
+        }
+      }
+
       toast({
         title: "Error creating API key",
         message: "Please try again later.",
@@ -50,6 +61,16 @@ const ApiKeyOptions = ({ apiKeyId, apiKeyValue }: ApiKeyOptionsProps) => {
       await revokeApiKey();
       router.refresh();
     } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response?.status === 429) {
+          return toast({
+            title: error.response.data,
+            message: "Slow down! Wait an hour before trying again.",
+            type: "error",
+          });
+        }
+      }
+
       toast({
         title: "Error revoking API key",
         message: "Please try again later.",
@@ -63,7 +84,7 @@ const ApiKeyOptions = ({ apiKeyId, apiKeyValue }: ApiKeyOptionsProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger disabled={isCreatingNewKey || isRevokingKey} asChild>
-        <Button variant='ghost' className='flex gap-2 items-center'>
+        <Button variant="ghost" className="flex gap-2 items-center">
           <p>
             {isCreatingNewKey
               ? "Creating new key"
@@ -73,7 +94,7 @@ const ApiKeyOptions = ({ apiKeyId, apiKeyValue }: ApiKeyOptionsProps) => {
           </p>
 
           {isCreatingNewKey || isRevokingKey ? (
-            <Loader2 className='h-4 w-4 animate-spin' />
+            <Loader2 className="h-4 w-4 animate-spin" />
           ) : null}
         </Button>
       </DropdownMenuTrigger>
