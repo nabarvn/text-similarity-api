@@ -5,6 +5,7 @@ import { toast } from "@/ui/Toast";
 import { createApiKey } from "@/helpers/create-api-key";
 import { Key } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { AxiosError } from "axios";
 import { Button, Heading, Input, Paragraph } from "@/components/ui";
 import { CopyButton } from "@/components";
 
@@ -24,14 +25,14 @@ const RequestApiKey = () => {
       setApiKey(generatedApiKey);
       router.refresh();
     } catch (error) {
-      if (error instanceof Error) {
-        toast({
-          title: "Error",
-          message: error.message,
-          type: "error",
-        });
-
-        return;
+      if (error instanceof AxiosError) {
+        if (error.response?.status === 429) {
+          return toast({
+            title: error.response.data,
+            message: "Slow down! Wait an hour before trying again.",
+            type: "error",
+          });
+        }
       }
 
       toast({
