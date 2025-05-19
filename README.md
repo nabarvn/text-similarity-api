@@ -27,13 +27,32 @@ cd text-similarity-api
 npm install
 ```
 
+### Setting up the `.env` file:
+
+```bash
+cp .env.example .env
+```
+
+> [!IMPORTANT]
+> Ensure you populate the variables with your respective API keys and configuration values before proceeding.
+
+### Configuring Prisma:
+
+```bash
+npx prisma generate
+```
+
+```bash
+npx prisma db push
+```
+
 ### Running the application:
 
 ```bash
 npm run dev
 ```
 
-## Tech Stack:
+## Tech Stack
 
 - **Language**: [TypeScript](https://www.typescriptlang.org)
 - **Framework**: [Next.js](https://nextjs.org)
