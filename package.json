@@ -1,6 +1,7 @@
 {
   "name": "text-similarity-api",
   "version": "0.1.0",
+  "author": "nabarvn",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +10,14 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
+  "keywords": [
+    "nextjs",
+    "prisma",
+    "next-auth",
+    "text-similarity",
+    "embeddings",
+    "zod"
+  ],
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
